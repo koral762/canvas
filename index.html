@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mister-canvas</title>
+    <link rel="stylesheet" href="css/canvas.css">
+</head>
+
+<body onload="init()">
+    <div class="nav">
+
+        <input type="color" onchange="changeColor(value)" class="pan-color">
+        <input type="color" onchange="changeBackgroundColor(value)" class="canvas-color">
+        <select onchange="changeShape(value)">
+            <option value="squares">Squares</option>
+            <option value="circles">Circles</option>
+        </select>
+
+        <button onclick="clearCanvas();">CLEAR</button>
+        <a href="#" onclick="downloadCanvas(this)" download="asdsad">Download</a>
+
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="my-canvas" height="620" width="1030" onmousedown="mouseMove(event)" onmouseup="mouseMove(event)" onmousemove="mouseMove(event)"></canvas>
+    </div>
+<script>
+    function resizeCanvas() {
+    var elContainer = document.querySelector('.canvas-container');
+    // var elContainer = document.querySelector('body');
+    canvas.width = elContainer.offsetWidth
+    canvas.height = elContainer.offsetHeight
+    }
+</script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
